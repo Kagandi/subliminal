@@ -88,8 +88,7 @@ class Subtitle(object):
         try:
             pysrt.from_string(self.text, error_handling=pysrt.ERROR_RAISE)
         except pysrt.Error as e:
-            if e.args[0] < 80:
-                return False
+            return False
 
         return True
 
